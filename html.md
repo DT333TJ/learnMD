@@ -269,7 +269,15 @@
 
 ### 2.8 案例
 
-<p>ol</p>
+> code
+> 
+<p>测试<code>ces</code></p>
+
+```javascript
+<p>测试<code>ces</code></p>
+```
+---
+> ol
 <ol>
   <li value="3">
     <data value="398">迷你番茄酱</data>
@@ -298,7 +306,8 @@
 
 ---
 
-<p>kbd</p>
+> kbd
+
 <kbd>ctrl</kbd>
 
 ```javascript
@@ -306,13 +315,16 @@
 ```
 
 ---
- <p>output</p>
-<form oninput="result.value=parseInt(a.value)+parseInt(b.value)">
+
+> output
+
+```javascript
+  <form oninput="result.value=parseInt(a.value)+parseInt(b.value)">
     <input type="range" name="b" value="50" /> +
     <input type="number" name="a" value="10" /> =
     <output name="result" for="a,b"></output>
   </form>
-
+```
 ---
 
 ## 3 TOC
