@@ -261,23 +261,65 @@
 - `<picture>` 配合`<source>` 和 `<img>`标签显示图像内容
   - `<source>` 作为首选元素，浏览器显示最优匹配的值
   - `<img>` 作为备选元素，如果没有匹配的 source,就显示 src
-- `<ol>` 有序列表
-- `<ol>` 有序列表
-- `<ol>` 有序列表
-- `<ol>` 有序列表
-- `<ol>` 有序列表
+- `<progress>` 显示一项任务的完成进度
+  - `value`
+  - `max`
+- `<q>` 短文本的引用
+  - `cite` 引用的链接
+- `<ruby>` 用来展示东亚文字注音或字符注释
+- `<rt>` 文字注音或者字符注释内容
+- `<script>` 用于嵌入可执行代码或数据，这通常用作嵌入或者引用 JavaScript 代码
+- `<section>` HTML 文档中一个通用独立章节，它没有更具体的语义元素来表示
+- `<select>` 表示一个提供选项菜单的控件
+  - `disabled` 布尔属性，用户是否能够交互
+  - `multiple` 布尔属性，是否支持多选
+  - `size` 多选时，表示为控件中同时可见的行数
+  - `form` 所关联的 form 元素
+- `<slot>` 作为 Web Component 技术套件的一部分，是 Web 组件内的一个占位符。该占位符可以在后期使用自己的标记语言填充，这样你就可以创建单独的 DOM 树，并将它与其他的组件组合在一起
+  - `name` 具名的插槽
+- `<small>` 样式表现为文本变小，定义为表示边注释和附属细则，包括版权和法律文本
+- `<strong>` 文本非常重要，粗体显示
+- `<sub>` 定义了一个文本区域，出于排版的原因，与主要的文本相比，应该展示得更低并且更小,可用做下标
+- `<summary>` 指定了 `<details>`元素展开盒子的内容的摘要，标题或图例。点击 `<summary>`元素可以切换父元素 <details> 开启和关闭的状态
+- `<sup>` 出于排版目的而显示为上标的行内文本
+- `<template>` 内容模板（`<template>`）元素是一种用于保存客户端内容机制，该内容在加载页面时不会呈现，但随后可以在运行时使用 JavaScript 实例化。
+  将模板视为一个可存储在文档中以便后续使用的内容片段。虽然解析器在加载页面时确实会处理 `<template>` 元素的内容，但这样做只是为了确保这些内容有效；但元素内容不会被渲染
+- `<track>`
+  - 当作`<audio>` 和 `<video>`的子元素使用，允许指定一种时序字幕
+- `<var>` 元素表示数学表达式或编程上下文中的变量名称
+- `<video>` 视频元素
+  - `controls`
+  - `controlslist`
+    - 允许的值有 `nodownload`、`nofullscreen` 和 `noremoteplayback`
+  - `loop` 布尔属性
+  - `poster`
+  - `preload`
+    - `metadata`
+    - `auto`
+    - `none`
 
-### 2.8 案例
+### 2.8 MathML
+
+> 是一个用于描述数学公式、符号的一种 XML (en-US) 标记语言
+
+- **`<math>`** 用于编写单个数学公式
+
+### 2.9 案例
 
 > code
-> 
+
 <p>测试<code>ces</code></p>
 
 ```javascript
-<p>测试<code>ces</code></p>
+<p>
+  测试<code>ces</code>
+</p>
 ```
+
 ---
+
 > ol
+
 <ol>
   <li value="3">
     <data value="398">迷你番茄酱</data>
@@ -318,13 +360,57 @@
 
 > output
 
+<form oninput="result.value=parseInt(a.value)+parseInt(b.value)">
+  <input type="range" name="b" value="50" /> +
+  <input type="number" name="a" value="10" /> =<output
+    name="result"
+    for="a,b"
+  ></output>
+</form>
+
 ```javascript
-  <form oninput="result.value=parseInt(a.value)+parseInt(b.value)">
-    <input type="range" name="b" value="50" /> +
-    <input type="number" name="a" value="10" /> =
-    <output name="result" for="a,b"></output>
-  </form>
+<form oninput="result.value=parseInt(a.value)+parseInt(b.value)">
+  <input type="range" name="b" value="50" /> +
+  <input type="number" name="a" value="10" /> =<output
+    name="result"
+    for="a,b"
+  ></output>
+</form>
 ```
+
+> progress
+
+<p>
+  <label for="progress">70%</label>
+<progress id="progress" value="70" max="100" title="70%"></progress>
+</p>
+
+```javascript
+<progress id="progress" value="70" max="100" title="70%"></progress>
+```
+
+---
+
+> ruby rt
+
+<ruby>黄昏 <rt>huang hun</rt></ruby>
+
+```javascript
+<ruby>
+  黄昏 <rt>huang hun</rt>
+</ruby>
+```
+
+> sub sup
+
+<span>H<sub>2</sub>O</span>
+<span>2<sup>2</sup></span>
+
+```javascript
+<span>H<sub>2</sub>O</span>
+<span>2<sup>2</sup></span>
+```
+
 ---
 
 ## 3 TOC
